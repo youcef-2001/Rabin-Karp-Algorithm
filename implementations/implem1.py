@@ -9,21 +9,24 @@ d = 256
 # q -> A prime number
 
 
-def search(pat, txt, q):
+def search(pat, txt, q,d=256):
+	"""
+	le programme suivant est une implementation de l'algorithme Rabin-Karp
+	pat -> pattern a rechercher
+	txt -> le texte dans leqel chercher
+	q -> est un nombre de preference premier necessaire a la fonction de hashage
+	d -> est le nombre de caractere dans l'alphabet d'input a ne pas confondre avec le texte auquel rechercher
+	"""
 	
 	M = len(pat)
 	N = len(txt)
 	i = 0
 	j = 0
-	p = 0 # hash value for pattern
-	t = 0 # hash value for txt
+	p = 0 # hash a rechercher
+	t = 0 # hash de la plage dans le texte
 	h = 1
 	
-
-
-
-
-	# The value of h would be "pow(d, M-1)%q"
+	# h = d.puiss(M-1) mod q
 	for i in range(M-1):
 		h = (h*d) % q
 	# Calculate the hash value of pattern and first window
