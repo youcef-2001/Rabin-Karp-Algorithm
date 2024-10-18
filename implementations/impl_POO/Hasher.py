@@ -1,7 +1,7 @@
 class Hasher :
     def __init__(self,txt,q,M, d =256):
         self.N = len(txt)
-        self.dic = dict(enumerate(self.N*[0]))
+        self.dic = dict(enumerate((self.N-M+1)*[0]))
         # The value of h would be "pow(d, M-1)%q"
         self.h = 1
         for i in range(M-1):
@@ -13,6 +13,7 @@ class Hasher :
 
 
     def calculHashes(self):
+        """rempli le dictionnaire de lobjet en calculant un hash pour toutees les fenetres"""
         for i in range(self.M):
             self.dic[0] = (self.d*self.dic[0] + ord(self.txt[i])) % self.q
         for i in range(self.N-self.M+1):
@@ -23,5 +24,8 @@ class Hasher :
             if self.dic[i+1] < 0:
                 self.dic[i+1] = self.dic[i+1]+self.q
 
-
-
+    def calculHash(self,pat):
+        """return le hash du pattern"""
+        for i in range(self.M):
+            p = (self.d*p + ord(pat[i])) % self.q
+        return p
