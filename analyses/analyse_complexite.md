@@ -21,6 +21,12 @@ Le calcul du hachage d'un motif (calculHash) prend O(M).
 La recherche dans le texte prend O(N) dans le meilleur cas, puisque chaque hachage est comparé directement. En cas de collision de hachage, une vérification caractère par caractère est effectuée, ce qui peut augmenter la complexité dans le pire cas à O(N * M).
 En résumé, cette approche garde la complexité similaire à celle de l'algorithme Rabin-Karp classique, avec O(N + M) dans la plupart des cas et O(N * M) dans le pire cas.
 
+#### image de la visualisation :
+
+Et voici une image de la visualisation selon le nombre de caracteres et le temps d'execution :
+
+![Mon Image](../ressources/visualisation1.png)
+
 #### Conclusion
 
 Cette approche modulaire de l'algorithme de Rabin-Karp améliore la lisibilité et la maintenabilité du code tout en préservant les performances de l'algorithme. Les classes Hasher et Searcher permettent une utilisation efficace et réutilisable de l'algorithme pour diverses applications de recherche de motifs.
