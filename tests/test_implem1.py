@@ -1,7 +1,7 @@
-from  ..implementations.implem1 import search
+from  ..implementations import implem1
 
 txt = """hey alors comment tu va salim , hey salim yeh cava ? 13 jours que je te cherche hoy""" 
 
-assert (search("hey", txt, 101 ) == [0,9])
+assert(implem1.search("hey", txt, 101 ) == [0,32])
 
 
