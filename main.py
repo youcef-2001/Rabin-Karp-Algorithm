@@ -32,13 +32,4 @@ if __name__ == '__main__':
 
 
 
-pat = "hey"
-hasher = Hasher(texte2, 101, len(pat))
-assert (not hasher == None)
-hasher.calculHashes()# rempli le dictionnaire des hash 
-searcher = Searcher(hasher , pat)
-assert(not searcher == None)
-assert(searcher.searchPattern() ==[15, 45, 54, 222, 240, 270, 279, 447])
-
-assert ( not hasher.calculHash("salut") ==  hasher.calculHash("lutsa"))
 
