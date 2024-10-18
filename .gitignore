@@ -1,1 +1,3 @@
 projet_spec.txt
+.pytest_cache
+.vscode
